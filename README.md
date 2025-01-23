@@ -34,10 +34,9 @@ Each hook is explained with clear examples, best practices, and common pitfalls 
 8. [memo](#8-memo)
 9. [Common Issues](#9-common-issues)
 10. [Custom Hooks](#10-custom-hooks)
-11. [Testing Hooks](#11-testing-hooks)
-12. [Quick Reference Table](#12-quick-reference-table)
-13. [Version Compatibility](#13-version-compatibility)
-14. [Feedback Mechanism](#14-feedback-mechanism)
+11. [Quick Reference Table](#11-quick-reference-table)
+12. [Version Compatibility](#12-version-compatibility)
+13. [Feedback Mechanism](#13-feedback-mechanism)
 
 ---
 
@@ -385,26 +384,6 @@ function useFetch(url) {
 
 ---
 
-## 11. Testing Hooks
-
-Testing hooks can be tricky, especially with `useEffect` and `useContext`. Use libraries like React Testing Library to facilitate testing.
-
-### Example of Testing a Hook
-
-```javascript
-import { renderHook } from '@testing-library/react-hooks';
-import { useFetch } from './useFetch';
-
-test('should fetch data', async () => {
-  const { result, waitForNextUpdate } = renderHook(() => useFetch('/api/data'));
-
-  await waitForNextUpdate();
-
-  expect(result.current.data).toBeDefined();
-});
-```
-
----
 
 ## 12. Quick Reference Table
 
